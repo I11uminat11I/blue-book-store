@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-_b9xythqm#1d!v8i0+e-)-45xcrfp6kf-kfl4u*eld1)flq6s&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CSRF_TRUSTED_ORIGINS = ["blue-book-store.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS = ["https://blue-book-store.herokuapp.com"]
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "blue-book-store.herokuapp.com"]
 
 
