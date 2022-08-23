@@ -12,11 +12,11 @@
         {% if not products %}
         <div class="col-12">There are currently no products active</div>
         {% else %}
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
           {% for product in products %}
           <div class="col">
-            <a class='text-decoration-none' href="{{ product.get_absolute_url }}">
-              <div class="card border-0">
+            <a class='text-decoration-none' href="{{ product.get_absolute_url }}" style='min-height:100%'>
+              <div class="card border-0" style='min-height:100%'>
                 {% for image in product.product_image.all %}
                 {% if image.is_feature%}
                 <div class='background'>
@@ -25,9 +25,13 @@
                 </div> 
                 {% endif %}
                 {% endfor %}
-                <div class="card-body px-0">
-                  <p class="card-text text-dark">{{ product.title|slice:":50" }}...</p>
-                  <div class="fw-bold text-dark">£{{product.regular_price}}</div>
+                <div class="card-body px-0 d-flex flex-column justify-content-between">
+                  {% if product.title|length > 35 %}
+                    <p class="card-text text-dark">{{ product.title|slice:":35" }}...</p>
+                  {% else %}   
+                    <p class="card-text text-dark">{{ product.title}}</p>   
+                  {% endif %}
+                  <div class="fw-bold text-dark">£{{product.regular_price}}<hr></div>
                 </div>
               </div>
             </a>
