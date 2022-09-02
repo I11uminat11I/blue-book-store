@@ -138,3 +138,10 @@ html, body, p, div{
     }
 
 }
+
+@media (max-width: 400px){
+    .background-cover {
+        min-height: 120px;
+    }
+
+}
