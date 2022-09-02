@@ -12,7 +12,7 @@
         {% if not products %}
         <div class="col-12">There are currently no products active</div>
         {% else %}
-        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-4">
           {% for product in products %}
           <div class="col">
             <a class='text-decoration-none' href="{{ product.get_absolute_url }}" style='min-height:100%'>
